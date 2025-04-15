@@ -2,7 +2,10 @@
 
 const Enterprise = () => {
   return (
-    <div>page</div>
+      <div>page
+          
+      </div>
+      
   )
 }
 

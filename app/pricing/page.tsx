@@ -2,7 +2,7 @@
 
 const pricing = () => {
   return (
-    <div><h1>Pricing</h1></div>
+    <div><h1 className="font-bold text-2xl">Pricing</h1></div>
   )
 }
 

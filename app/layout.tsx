@@ -32,8 +32,10 @@ const RootLayout = (props: PropsWithChildren) => {
     <html lang="en">
       <body className="inter.className">
         <div className="flex flex-col items-stretch">
-          <NavigationBar />
-          <Container>{props.children}</Container>
+          <div className="border-b-[1px] border-b-[#333333] ">
+            <NavigationBar />
+          </div>
+          <Container className="py-4">{props.children}</Container>
         </div>
       </body>
     </html>

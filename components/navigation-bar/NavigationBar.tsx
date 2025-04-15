@@ -1,38 +1,53 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "../container/Container";
 
-const NavigationBar = () => {
+export default () => {
   const path = usePathname();
+
+  const paths = {
+    home: "/",
+    enterprise: "/enterprise",
+    pricing: "/pricing",
+    blog: "/blog",
+  };
 
   return (
     <Container>
-      <div>
-        <ul className="flex flex-row list-none items-center justify-center gap-8 bg-amber-200">
-          <li key="/home" className={path === "/" ? "text-red-500" : ""}>
+      <nav>
+        <ul className="flex flex-row items-center justify-stretch gap-8 list-none py-4">
+          <li
+            key={paths.home}
+            className={path == paths.home ? "text-blue-800 font-bold" : ""}
+          >
             <Link href="/">Home</Link>
           </li>
           <li
-            key="/enterprise"
-            className={path === "/enterprise" ? "text-red-500" : ""}
+            key={paths.enterprise}
+            className={
+              path == paths.enterprise ? "text-blue-800 font-bold" : ""
+            }
           >
-            <Link href="/enterprise">Enterprise</Link>
+            <Link href={paths.enterprise}>Enterprise</Link>
           </li>
           <li
-            key="/pricing"
-            className={path === "/pricing" ? "text-red-500" : ""}
+            key={paths.pricing}
+            className={path == paths.pricing ? "text-blue-800 font-bold" : ""}
           >
-            <Link href="/pricing">Picing</Link>
+            <Link href={paths.pricing}>Pricing</Link>
           </li>
-
-          <li key="/blog" className={path === "/blog" ? "text-red-500" : ""}>
-            <Link href="/blog">Blog</Link>
+          <li
+            key={paths.blog}
+            className={
+              path.startsWith(paths.blog) ? "text-blue-800 font-bold" : ""
+            }
+          >
+            <Link href={paths.blog}>Blog</Link>
           </li>
         </ul>
-      </div>
+      </nav>
     </Container>
   );
 };
-
-export default NavigationBar;

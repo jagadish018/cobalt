@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Explore the fascinating world of cobalt. From its role in clean energy to cutting-edge technology, Cobalt is your guide to this powerful metal.",
     images: {
-      url: "https://cobalt-omega.vercel.app/",
+      url: "https://cobalt-omega.vercel.app/og-card.png",
       width: 1200,
       height: 628,
     },
